@@ -1,7 +1,8 @@
 package ru.netolgy;
 
 public class Radio {
-    public int numberRadioStation;
+    private int numberRadioStation;
+    private int volume;
 
     public int getNumberRadioStation() {
 
@@ -48,7 +49,6 @@ public class Radio {
         return numberRadioStation;
     }
 
-    public int volume;
 
     public int getVolume() {
 
