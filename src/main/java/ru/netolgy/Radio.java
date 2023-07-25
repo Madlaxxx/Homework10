@@ -12,7 +12,9 @@ public class Radio {
     public Radio(int size) {
 
         maxNumberRadioStation = minNumberRadioStation + size;
-        this.initialNumberRadioStation = initialNumberRadioStation;
+
+    }
+    public Radio(){
 
     }
 
