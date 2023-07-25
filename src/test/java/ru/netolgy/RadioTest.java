@@ -6,7 +6,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    Radio radio = new Radio();
+    Radio radio = new Radio(5);
+
+    @Test
+    public void shouldMaxRadioStation() {
+
+        Assertions.assertEquals(0, radio.getMinNumberRadioStation());
+        Assertions.assertEquals(5, radio.getMaxNumberRadioStation());
+
+    }
+
+    @Test
+    public void shouldInitialNumberRadioStation() {
+
+        Assertions.assertEquals(10, radio.getInitialNumberRadioStation());
+
+    }
+
 
     @Test
     public void shouldSetRadioStation() {

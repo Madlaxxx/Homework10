@@ -1,13 +1,41 @@
 package ru.netolgy;
 
 public class Radio {
+    private int initialNumberRadioStation = 10;
+    private int minNumberRadioStation = 0;
+    private int maxNumberRadioStation = 9;
     private int numberRadioStation;
+
+
     private int volume;
+
+    public Radio(int size) {
+
+        maxNumberRadioStation = minNumberRadioStation + size;
+        this.initialNumberRadioStation = initialNumberRadioStation;
+
+    }
+
+    public int getInitialNumberRadioStation() {
+
+        return initialNumberRadioStation;
+    }
 
     public int getNumberRadioStation() {
 
         return numberRadioStation;
     }
+
+    public int getMinNumberRadioStation() {
+
+        return minNumberRadioStation;
+    }
+
+    public int getMaxNumberRadioStation() {
+
+        return maxNumberRadioStation;
+    }
+
 
     public void setMaxNumberRadioStation() {
         numberRadioStation = 9;
@@ -82,5 +110,6 @@ public class Radio {
 
         return volume;
     }
+
 
 }
