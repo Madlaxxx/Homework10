@@ -1,5 +1,12 @@
 package ru.netolgy;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
 public class Radio {
     private int initialNumberRadioStation = 10;
     private int minNumberRadioStation = 0;
@@ -53,28 +60,24 @@ public class Radio {
 
     }
 
-    public int setNextNumberRadioStation(int next) {
+    public void setNextNumberRadioStation() {
 
-        if (next < 9) {
-            next += 1;
+        if (numberRadioStation < 9) {
+            numberRadioStation += 1;
         } else {
-            next = 0;
+            numberRadioStation = 0;
         }
-        numberRadioStation = next;
 
-        return numberRadioStation;
     }
 
-    public int setPrevNumberRadioStation(int prev) {
+    public void setPrevNumberRadioStation() {
 
-        if (prev < 0) {
-            prev = 9;
+        if (numberRadioStation == 0) {
+            numberRadioStation = 9;
         } else {
-            prev -= 1;
+            numberRadioStation -= 1;
         }
-        numberRadioStation = prev;
 
-        return numberRadioStation;
     }
 
 
@@ -83,33 +86,39 @@ public class Radio {
         return volume;
     }
 
+    public void setVolume(int newVolume) {
+        if (newVolume > 100) {
+            return;
+        }
+        if (newVolume < 0) {
+            return;
+        }
+        volume = newVolume;
+    }
+
     public void setMaxVolume() {
         volume = 100;
     }
 
-    public int setNextLevelVolume(int nextVolume) {
+    public void setNextLevelVolume() {
 
-        if (nextVolume < 100) {
-            nextVolume += 1;
+        if (volume < 100) {
+            volume += 1;
         } else {
-            nextVolume = 100;
+            volume = 100;
         }
-        volume = nextVolume;
 
-        return volume;
     }
 
-    public int setPrevLevelVolume(int prevVolume) {
+    public void setPrevLevelVolume() {
 
-        if (prevVolume < 0) {
-            prevVolume = 0;
+        if (volume == 0) {
+            volume = 0;
         } else {
-            prevVolume -= 1;
+            volume -= 1;
         }
-        volume = prevVolume;
 
-        return volume;
-    }
+}
 
 
 }
